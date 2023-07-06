@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <link rel="shortcut icon" href="../static/Assets/v1_90.png">
+    <link rel="stylesheet" href="../static/css/Style.css">
+    <link rel="stylesheet" href="../static/Fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="./static/scripts/Index.js"></script>
+    <title>Niha Technology</title>
+</head>
+
+<body>
+    <header>
+        <section class="top-page">
+            <div class="tp-right">
+                <div class="logo-text">NIHA TECHNOLOGY</div>
+                <img class="logo" src="../static/Assets/v1_90.png" alt="Logo" title="NihaTech" />
+                <div class="relative">
+                    <i class="fa fa-search c-767575 i-search absolute"></i>
+                    <input type="search" placeholder="جستجو کنید" />
+                </div>
+            </div>
+
+            <div class="tp-left">
+                {% if no_login %}
+                <a class="login-btn lc-btn text-dec-none" href="/login">ثبت نام/ورود <i class="fa fa-user-o"></i></a>
+
+                {% endif %}
+
+                {% if logged_in %}
+                <a class="login-btn lc-btn text-dec-none" href="/signout">خروج <i class="fa fa-user-o"></i></a>
+                <a class="cart-btn lc-btn text-dec-none" href="/cart">سبد خرید <i class="fa fa-shopping-cart" ></i></a>
+                {% endif %}
+            </div>
+
+
+        </section>
+        <section class="navbar-top relative">
+            <div class="navbar">
+                <div>
+                    <button class="category-btn" onmouseover="show()" onclick="hide()"><i class="fa fa-bars"></i>دسته
+                        بندی </button>
+                    <a class="text-dec-none" href="/">صفحه اصلی</a>
+                    <a class="text-dec-none" href="#about">درباره ما</a>
+                </div>
+                <h3>Niha Technology</h3>
+            </div>
+
+            <div class="burger absolute" id="burger1">
+                <a href="/laptop" class="category-btn burger-item c-black text-dec-none hover-ffffff">لپ تاپ<i
+                        class="fa fa-caret-left c-black hover-ffffff"></i></a>
+                <a href="/mobile" class="category-btn burger-item c-black text-dec-none hover-ffffff">موبایل<i
+                        class="fa fa-caret-left c-black hover-ffffff"></i></a>
+                <a href="/otherProducts" class="category-btn burger-item c-black text-dec-none hover-ffffff">لوازم
+                    جانبی<i class="fa fa-caret-left c-black hover-ffffff"></i></a>
+
+            </div>
+        </section>
+    </header>
+    <main>
+        <div class="img-container">
+            <img id="image1" class="baner" src="../static/Assets/v1_12.png" alt="Banner" />
+        </div>
+
+
+        <article class="n-p-top">
+            <h3 class="c-ffffff">جدیدترین محصولات هفته</h3>
+            <a class="text-dec-none c-black more hover-ffffff" href="/laptop">مشاهده بیشتر</a>
+        </article>
+
+        <section class="new-products">
+            {% for com in commodity_latest %}
+                <div class="product relative">
+                    <div class='p-img' style="height:410px; width:380px">
+                        <img src="../static/Assets/{{com[2]}}" alt="عکس لپ تاپ">
+                        <i class="fa fa-heart-o position-i-heart absolute"></i>
+                    </div>
+                    <div class="p-info" style="height:150px; width:380px">
+                        <p class='c-ffffff'>{{com[1]}}</p>
+                        <div class='p-cost'>
+                            <p class='c-ffffff'>{{com[3]}} تومان</p>
+                            <a href="/addToCart?route=home&name={{com[1]}}&src={{com[2]}}&price={{com[3]}}">
+                                <i class="fa fa-shopping-basket c-ffffff"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+
+
+        {% if addToCart_alert %}
+        <script >
+            alert("کالا با موفقیت به سبد خرید اضافه شد.")
+        </script>            
+        {% endif %}
+
+
+        {% if login_alrt_err %}
+        <script >
+            alert("جهت سفارش کالا ابتدا وارد حساب کاربری خود شوید.")
+        </script>            
+        {% endif %}
+
+        
+        
+        <article class="n-p-top">
+            <h3 class="c-ffffff">پرفروش ترین ها</h3>
+        </article>
+
+        <section class="new-products">
+            {% for com in commodity_best %}
+                <div class="product relative">
+                    <div class='p-img' style="height:410px; width:380px">
+                        <img src="../static/Assets/{{com[2]}}" alt="عکس لپ تاپ">
+                        <i class="fa fa-heart-o position-i-heart absolute"></i>
+                    </div>
+                    <div class="p-info" style="height:150px; width:380px">
+                        <p class='c-ffffff'>{{com[1]}}</p>
+                        <div class='p-cost'>
+                            <p class='c-ffffff'>{{com[3]}} تومان</p>
+                            <a href="/addToCart?route=home&name={{com[1]}}&src={{com[2]}}&price={{com[3]}}">
+                                <i class="fa fa-shopping-basket c-ffffff"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+
+
+        {% if final_buy %}
+            <script type="text/javascript">
+                alert("سفارش شما ثبت شد. در کمترین زمان ممکن برای شما ارسال خواهد شد.")
+            </script>
+        {% endif %}
+
+
+        <article class="c-ffffff about-us">
+            <h3>درباره ما</h3>
+        </article>
+        <section id="about" class="c-ffffff about">
+            <h3>تاریخچه نیها تکنولوژی</h3>
+            <p>مجموعه نیها تکنولوژی - یکی از معتبر ترین فروشگاه های آنلاین کشور - در آغاز با فروش لپ تاپ ،گوشی موبایل و
+                لوازم جانبی کار خود را شروع کرد.بعد ازموفقیت و جلب رضایت مشتریان با نیاز سنجی و درایت مدیریت محترم
+                ،تصمیم به خدمت رسانی به تمام هموطنان در سرارسر ایران عزیزمان گرفت که در راستای این سیاست گذاری، سایت
+                nihatech.ir سال 1402 راه اندازی گردید</p>
+            <h3>هدف ما،تداوم رفاقت</h3>
+            <p>با شما مهم ترین هدف ما در فروشگاه نیهاتکنولوژی،جلب و حفظ رضایت شما دوستانی است که سرمایه های ارزشمند این
+                فروشگاه محسوب می شوید. دربرابر قیمت های متغیر و گاه غیر منصفانه بازار، ما در کنار شما هستیم وهموراره در
+                تلاشیم تا کالای با کیفیت را را گارانتی معتبر و به نازل ترین قیمت در دسترس شما عزیزان قرار دهیم. در نیها
+                تکنولوژی به معنای واقعی کامه، همیشه حق با مشتری است.</p>
+        </section>
+        <div class="circle circle-b circle-b-l absolute"></div>
+        <div class="circle circle-p circle-p-r absolute"></div>
+        <div class="circle circle-b circle-b-r absolute"></div>
+        <div class="circle circle-p circle-p-l absolute"></div>
+    </main>
+    <footer>
+        <section class="top-footer">
+            <div class="f-item">
+                <span class="footer-i-size"><i class="fa fa-clock-o"></i></span>
+                <p>خدمات 24 ساعته</p>
+            </div>
+            <div class="f-item">
+                <span class="footer-i-size"><i class="fa fa-truck"></i></span>
+                <p>ارسال رایگان و به موقع</p>
+            </div>
+            <div class="f-item">
+                <span class="footer-i-size"><i class="fa fa-exchange"></i></span>
+                <p>امکان مرجوع و تعویض</p>
+            </div>
+            <div class="f-item">
+                <span class="footer-i-size"><i class="fa fa-usd"></i></span>
+                <p>امکان مقایسه قیمت</p>
+            </div>
+        </section>
+        <section class="bottom-footer">
+            <div class="f-item">
+                <h3>راهنما</h3>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی پرداخت</a>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی ارسال کالا</a>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی ثبت سفارش</a>
+            </div>
+            <div class="f-item">
+                <h3>خدمات مشتریان</h3>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی بازگشت کالا</a>
+                <a class="text-dec-none c-767575 hover-basket">پرسش های متداول</a>
+                <a class="text-dec-none c-767575 hover-basket">اطلاع رسانی</a>
+            </div>
+            <div class="f-item">
+                <h3>ارتباط با ما</h3>
+                <div class="footer-icons">
+                    <a class="text-dec-none c-767575"><i class="fa fa-instagram hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-twitter hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-telegram hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-linkedin hover-basket"></i></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

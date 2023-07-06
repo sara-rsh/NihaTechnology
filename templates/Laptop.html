@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات</title>
+    <link rel="stylesheet" href="../static/css/Style.css" />
+    <link rel="shortcut icon" href="../static/Assets/v1_90.png"/>
+    <link rel="stylesheet" href="../static/Fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="../static/scripts/Index.js"></script>
+</head>
+<body>
+    <header>
+        <section class="top-page">
+            <div class="tp-right">
+                <div class="logo-text">NIHA TECHNOLOGY</div>
+                <img class="logo" src="../static/Assets/v1_90.png" alt="Logo" title="NihaTech"/>
+                <div class="relative">
+                    <i class="fa fa-search c-767575 i-search absolute"></i>
+                    <input type="search" placeholder="جستجو کنید"/>
+                </div>    
+            </div>
+            <div class="tp-left">
+                {% if no_login %}
+                <a class="login-btn lc-btn text-dec-none" href="/login">ثبت نام/ورود <i class="fa fa-user-o"></i></a>
+
+                {% endif %}
+
+                {% if logged_in %}
+                <a class="login-btn lc-btn text-dec-none" href="/signout">خروج <i class="fa fa-user-o"></i></a>
+                <a class="cart-btn lc-btn text-dec-none" href="/cart">سبد خرید <i class="fa fa-shopping-cart" ></i></a>
+                {% endif %}
+                
+            </div>
+        </section>
+        <section class="navbar-top relative">
+            <div class="navbar">
+                <div>
+                    <button class="category-btn" onmouseover="show()"  onclick="hide()"><i class="fa fa-bars"></i>دسته بندی </button>
+                    <a class="text-dec-none" href="/">صفحه اصلی</a>
+                    <a class="text-dec-none" href="#about">درباره ما</a>
+                </div>
+                <h3>Niha Technology</h3>
+            </div>
+
+            <div class="burger absolute" id="burger1" >
+                <a href="/laptop" class="category-btn burger-item c-black text-dec-none hover-ffffff">لپ تاپ<i class="fa fa-caret-left c-black hover-ffffff"></i></a>
+                <a href="/mobile" class="category-btn burger-item c-black text-dec-none hover-ffffff">موبایل<i class="fa fa-caret-left c-black hover-ffffff"></i></a>
+                <a href="/otherProducts" class="category-btn burger-item c-black text-dec-none hover-ffffff">لوازم جانبی<i class="fa fa-caret-left c-black hover-ffffff"></i></a>
+                
+            </div>
+        </section>
+    </header>
+
+    <main class="main-p">
+
+        {% for laptop in laptops %}
+        <section class="section-p">
+            <img src="../static/Assets/{{laptop[2]}}"/>
+            <h3>{{laptop[1]}}</h3>
+            <div>
+                <p>{{laptop[3]}} تومان</p>
+                <a href="/addToCart?route=laptop&name={{laptop[1]}}&src={{laptop[2]}}&price={{laptop[3]}}">
+                    <button  class="add-to-cart-btn hover-basket-btn">افزودن به سبد</button>
+                </a>
+            </div>
+        </section>
+        {% endfor %}
+
+        {% if addToCart_alert %}
+        <script >
+            alert("کالا با موفقیت به سبد خرید اضافه شد.")
+        </script>            
+        {% endif %}
+
+        {% if login_alrt_err %}
+        <script >
+            alert("جهت سفارش کالا ابتدا وارد حساب کاربری خود شوید.")
+        </script>            
+        {% endif %}
+
+
+
+        <div class="circle circle-b circle-b-l absolute"></div>
+        <div class="circle circle-p circle-p-r absolute"></div>
+    </main>
+
+    <footer>
+        <section class="bottom-footer">
+            <div class="f-item">
+                <h3>راهنما</h3>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی پرداخت</a>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی ارسال کالا</a>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی ثبت سفارش</a>
+            </div>
+            <div class="f-item">
+                <h3>خدمات مشتریان</h3>
+                <a class="text-dec-none c-767575 hover-basket">چگونگی بازگشت کالا</a>
+                <a class="text-dec-none c-767575 hover-basket">پرسش های متداول</a>
+                <a class="text-dec-none c-767575 hover-basket">اطلاع رسانی</a>
+            </div>
+            <div class="f-item">
+                <h3>ارتباط با ما</h3>
+                <div class="footer-icons">
+                    <a class="text-dec-none c-767575"><i class="fa fa-instagram hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-twitter hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-telegram hover-basket"></i></a>
+                    <a class="text-dec-none c-767575"><i class="fa fa-linkedin hover-basket"></i></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

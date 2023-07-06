@@ -1,0 +1,601 @@
+@font-face {
+    font-family:IRANSans-B ;
+    src: url(../Fonts/IRANSans\(Small\)_Bold.ttf);
+}
+@font-face {
+    font-family:Morabba-B ;
+    src: url(../Fonts/Morabba-Bold.ttf);
+}
+@media screen and (max-width:1300px){
+    .login{
+        top: 15vw !important;
+        bottom: 15vw !important;
+        right: 30vw !important;
+        left: 30vw !important;
+    } 
+}
+@media screen and (max-width:1400px) {
+    .cart-sec{
+        display: flex;
+        align-items: center;
+        gap: 50px !important;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .cart-body{
+        margin:7vw 5vw !important;
+    }
+}
+@media screen and (max-width:992px){
+    .login{
+        top: 25vw !important;
+        bottom: 25vw !important;
+        right: 25vw !important;
+        left: 25vw !important;
+    } 
+}
+@media screen and (max-width:756px){
+    .login{
+        top:35vw !important;
+        bottom:35vw !important;
+        right: 20vw !important;
+        left: 20vw !important;
+    } 
+}
+@media screen and (max-width:576px){
+    .login{
+        top: 50vw !important;
+        bottom: 50vw !important;
+    } 
+}
+@media screen and (max-width:450px){
+    .login{
+        top: 70vw !important;
+        bottom: 70vw !important;
+    } 
+}
+html{
+    direction: rtl;
+    font-family:IRANSans-B ;
+    word-spacing:.05cm;
+    font-size: 1.5vw;
+}
+body{
+    margin: 0px;
+    background-color: #0F2882;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.text-dec-none{
+    text-decoration: none;
+}
+.c-767575{
+    color: #767575;
+}
+.c-ffffff{
+    color: #ffffff;
+}
+.c-black{
+    color: black !important;
+}
+.position-i-heart{
+    left:1.5vw ;
+    top: 1vw;
+    color: #0F2882;
+}
+.circle{
+    width: 40vw;
+    height: 400px;
+    opacity: 85%;
+    border-radius: 100%;
+    filter: blur(12vw);
+    z-index:-1;
+}
+.circle-b{
+    background-color: #7EBBBF;
+}
+.circle-p{
+    background-color: #A858C3;
+}
+.circle-b-l{
+    left:0px;
+    top: 4vw;
+}
+.circle-p-r{
+    right: 0px;
+    top: 4vw;
+}
+.circle-b-r{
+    top: 90vw;
+    right:0px;
+}
+.circle-p-l{
+    top: 150vw;
+    left: 0px;
+}
+.footer-i-size{
+    font-size: 5vw;
+}
+.signup{
+    display: none;
+}
+.log-element-hover:hover{
+    background-color:#e8e8e892;
+    color: rgb(0, 162, 0);
+}
+.hover-gray{
+    background-color:#e8e8e892;
+}
+.display-none{
+    display: none;
+}
+.cart-sec-border{
+    border: 2px solid #ffffff;
+}
+.show{
+    display: block;
+}
+.hover-ffffff:hover{
+    color:#ffffff !important;
+}
+.hover-heart:hover{
+    color: red;
+}
+.hover-basket:hover{
+    color: #b94edcad;
+}
+.hover-basket-btn:hover{
+    background-color:#b94edcad ;
+}
+
+/* top page */
+
+.logo{
+    width: 80px;
+}
+.logo-text{
+    color: #4C48E7;
+    width: 95px;
+    text-align: left;
+    font-size:18px;
+}
+.top-page{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 0vw 6vw;
+}
+.tp-right{
+    display: flex;
+    align-items: center;
+}
+.tp-right div input{
+    padding:8px 3vw;
+    border: none;
+    border-radius: 10px;
+    background-color:#cbcaca;
+    width:20vw;
+    font-size: 1.3vw;
+    font-family:IRANSans-B ;
+    word-spacing:.05cm;
+    outline-color: #464ee4;
+}
+.i-search{
+    top: 8px;
+    right:10px;
+}
+.tp-left{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5vw;
+}
+.lc-btn{
+    border:solid 2px;
+    padding:3px 7px;
+    border-radius: 10px;
+}
+.login-btn{
+    background-color: #464ee4;
+    color:#ffffff;
+}
+.login-btn:hover{
+    background-color:#ffffff ;
+    color:#464ee4;
+}
+.cart-btn{
+    background-color: #ffffff;
+    color: #464ee4;
+}
+.cart-btn:hover{
+    background-color: #464ee4;
+    color:#ffffff;
+}
+
+/* navbar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 6vw;
+    border-top: 3px solid #d4dae7;
+    border-bottom: 3px solid #d4dae7;
+    margin-top: 10px;
+}
+.navbar h3{
+    color: #d4dae7;
+    font-size: 3vw;
+    margin: 0px;
+}
+.navbar :not(h3){
+    color: #ffffff;
+}
+.navbar div{
+    display: flex;
+    gap: 30px;
+}
+.category-btn{
+    display: flex;
+    border: none;
+    background-color: transparent;
+    gap: 5px;
+    font-family:IRANSans-B ;
+    font-size: 1.5vw;
+    word-spacing:.05cm;
+}
+.burger{
+    z-index: 100;
+    background-color: rgba(255, 254, 254, 0.752);
+    flex-direction: column;
+    top: 5vw;
+    right: 6vw;
+    visibility: hidden;
+   
+}
+.burger :not(:last-child){
+    border-bottom: 1px solid rgb(68, 1, 92);
+}
+.burger-item{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding:1vw 2vw;
+}
+.burger-item-hover{
+    right:17vw;
+    top:3.5vw;
+    flex-direction: column;
+}
+.burger-item-hover div{
+    border: 3px solid rgb(68, 1, 92);
+    padding: 9px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.burger-item:hover{
+ background-color: #2f00727b;
+}
+
+/* baner */
+
+.baner{
+    width: 100%;
+    margin-top: 20px;
+}
+#image1 {
+    display: block;
+}
+
+/* footer */
+
+.top-footer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color:#05164f;
+    padding:20px 0px;
+    color: #ffffff;
+    margin-top: 16px;
+}
+.f-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+.f-item h3{
+    font-size: 1.7vw;
+}
+.bottom-footer{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 40px 0px 50px 0px;
+}
+.footer-icons{
+    display: flex;
+    flex-wrap: wrap;
+    width: 4vw;
+    gap: 5px;
+}
+
+/* new product*/
+
+.n-p-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:60px 0px 10px 0px;
+    padding: 0vw 7vw;
+}
+.n-p-top a{
+    padding: .5vw 2vw;
+    border-radius: 8px;
+    background-color: #dddddf;
+    font-family:IRANSans-B ;
+    word-spacing:.05cm;
+    font-size: 1.2vw;
+}
+.n-p-top h3{
+    font-family:Morabba-B ;
+}
+.p-img img{
+    width: 100%;
+}
+.p-img{
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+.new-products{
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #d4dae7;
+}
+.product{
+    width:20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.p-info{
+    border: 1px solid #d4dae7;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+}
+.p-info p{
+    margin-top: 0px;
+    text-align: center;
+}
+.p-cost{
+    display: flex;
+    justify-content: space-around;
+    flex-direction:row-reverse;
+}
+.p-cost p{
+    margin-bottom: 0px;
+}
+.p-img:hover , .n-p-top button:hover{
+    box-shadow:5px 5px 15px 2px #151515;
+    opacity: 80%;
+}
+.more:hover{
+    background-color: #b94edcad;
+}
+
+/* toppaidproduct */
+
+.tp-products{
+    display: grid;
+}
+
+/* login */
+
+.log-img{
+    width: 110%;
+    height: 110%;
+    position: fixed;
+    filter: blur(5px);
+}
+.login{
+    padding:0vw 4vw 0vw 4vw;
+    border: 1px solid #ffffff85;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 1vw;
+    z-index: 100;
+    top: 5vw;
+    bottom: 5vw;
+    left:35vw;
+    right: 35vw;
+}
+.log-btn{
+    font-family:IRANSans-B ;
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    word-spacing:.05cm;
+    font-size: 1.2vw;
+}
+.log-btn:hover{
+    border-bottom: 1px solid #ffffff;
+}
+.login input{
+    font-family:IRANSans-B ;
+    border: none;
+    border-radius: 5px;
+    background-color: #e9e9e9;
+    padding: .5vw;
+    word-spacing:.05cm;
+    font-size: 1.2vw;
+}
+.login-btn-part{
+    display: flex;
+    justify-content: space-between;}
+.login label{
+    margin: 0px;
+    font-size: 2vw;
+}
+.login h2{
+    background:radial-gradient(circle,transparent,#d2d1d184 );
+    padding:.5vw;
+    border-radius: 5px;
+    letter-spacing:.07cm;
+    text-align: center;
+    margin-top: 0px;
+}
+.submit-login{
+    font-family:IRANSans-B ;
+    border: none;
+    background-color:#e9e9e9 ;
+    padding: .5vw;
+    border-radius: 5px;
+    color: #757575;
+    font-size: 1.2vw;
+}
+
+/* about */
+
+.about{
+    background:radial-gradient(circle,transparent,#dbdbdb29 );
+    border: 1px solid #ffffff85;
+    border-radius: 10px;
+    margin:0px 7vw 7vw 7vw;
+    padding:25px;
+}
+.about-us{
+    margin: 7vw 7vw 0px 0px;
+    font-family:Morabba-B ;
+}
+.about h3{
+    margin: 0px;
+}
+.about p{
+    margin-top: 0px;
+}
+
+/* productPage */
+
+.main-p{
+    margin:5vw 0px;
+}
+.section-p{
+    padding: 0px 50px;
+    display: flex;
+    gap:10vw;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff89;
+    font-size: 1.5vw;
+    margin: 20px 0px;
+}
+.section-p img{
+    width:10vw;
+}
+.section-p h3{
+    width:20vw;
+}
+.add-to-cart-btn{
+    background-color: #0F2882;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 2vw;
+    font-family:IRANSans-B ;
+    border: none;
+    font-size: 1.5vw;
+}
+
+/* cart */
+
+.cart-sec{
+    display: flex;
+    gap: 20px;
+    margin-top:3vw;
+}
+.cart-body{
+    margin:2.8vw 5vw;
+    background-image: url(../Assets/v81_155.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.cart-sec1{
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+}
+.cart-sec2{
+    width: 20vw;
+    padding:2vw;
+}
+.cart-sec2 div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.discount{
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    width: 8vw;
+    padding: .4vw;
+    border: none;
+}
+.cart-sec2 button{
+    background-color: #ed5c45;
+    color: #ffffff;
+    font-family:IRANSans-B ;
+    border: none;
+    border-radius: 5px;
+    width:48%;
+    padding: .4vw;
+    margin-top: 10px;
+    margin-right: 5vw;
+}
+.address-entry:hover{
+    color:#daac54 ;
+}
+
+.cart-img{
+    width: 110%;
+    height: 110%;
+    position: fixed;
+    filter: blur(5px);
+    z-index: -1;
+    top: 0px;
+    right: 0px;
+}
+
+
+
+
+.cart-info{
+    margin-top: 20px;
+}
+.cart-info input{
+    font-family:IRANSans-B ;
+    width: 100%;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e9e9e9;
+    padding: .5vw;
+    word-spacing:.05cm;
+    font-size: 1.2vw;
+}
+.top-cart-sec{
+    display: flex;
+    justify-content: space-between;
+}

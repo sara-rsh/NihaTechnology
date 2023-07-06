@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود</title>
+    <link rel="shortcut icon" href="../static/Assets/v1_90.png"/>
+    <link rel="stylesheet" href="../static/css/Style.css" />
+</head>   
+           
+<body>
+    
+    <div>
+    <img class="log-img absolute" src="../static/Assets/v81_155.png"/>
+        <form action="/login" method="POST" class="login c-ffffff absolute">
+            <h2>Niha Technology</h2>
+            <label>ورود</label>
+            <input type="text" name="user" placeholder="نام کاربری" class="log-element-hover"/>
+            <input type="password" name="password" placeholder="رمز عبور" class="log-element-hover"/>
+            <div class="login-btn-part">
+                <a href="/signup" class="log-btn text-dec-none">ثبت نام</a>
+                <button class="log-btn">فراموشی رمز</button>
+            </div>
+            <div class="tp-left">
+                {% if no_login %}
+                <a class="login-btn lc-btn text-dec-none" href="/login">ثبت نام/ورود <i class="fa fa-user-o"></i></a>
+                {% endif %}
+
+                {% if logged_in %}
+                <a class="cart-btn lc-btn text-dec-none" href="/cart">سبد خرید <i class="fa fa-shopping-cart" ></i></a>
+                <a class="login-btn lc-btn text-dec-none" href="/signout">خروج <i class="fa fa-user-o"></i></a>
+                {% endif %}
+
+            </div>
+
+
+
+            {% if show_alrt %}
+            <script >
+                alert("ثبت نام با موفقیت انجام شد. جهت تایید حساب خود بر روی لینک ارسال شده به ایمیل کلیک کنید.")
+            </script>
+            {% endif %}
+
+            {% if show_err_noactive %}
+            <script> 
+            alert("اکانت شما فعال نشده است")
+            </script>
+            {% endif %}
+
+            {% if show_err %}
+            <script> 
+            alert("نام کاربری یا رمز عبور اشتباه است")
+            </script>
+            {% endif %}
+
+
+            <button class="submit-login log-element-hover" type="submit">ورود</button>
+        </form>
+    </div>
+</body>
+</html>

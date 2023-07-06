@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/Assets/v1_90.png"/>
+    <link rel="stylesheet" href="../static/css/Style.css" />
+    <title>سبد خرید</title>
+</head>
+<body class="cart-body" >
+
+    <img class="cart-img absolute" src="../static/Assets/v81_155.png"/>
+    <section class="top-cart-sec">
+        <article class="c-ffffff">سبد خرید من</article>
+        <a href="/" class="text-dec-none c-ffffff">بازگشت</a>
+
+    </section>
+
+
+    <section class="cart-sec c-ffffff absolute">
+
+        
+        <div class="cart-sec1 cart-sec-border relative ">
+
+            {% for com in user_commodities %}
+            <section class="section-p">
+                <img src="../static/Assets/{{com[3]}}">
+                <h3>{{com[2]}}</h3>
+                <div>
+                    <p>{{com[4]}} تومان</p>
+                </div>
+            </section>
+            {% endfor %}
+
+            
+        </div>
+
+
+        <div class="cart-sec2 cart-sec-border c-ffffff relative absolute">
+            <p>تعداد کالا : {{com_length}}</p>
+            <p>هزینه ارسال : 20,000 تومان</p>
+            <p>قیمت کل : {{total_price}}</p>
+            
+            <form action="/cart"  method="POST" class="cart-info">
+                <input type="text" name="Address" placeholder="آدرس" class="hover-gray"/>
+                <input type="text" name="Code" placeholder="کد پستی" class="hover-gray"/>
+                <input type="text" name="Phonenumber" placeholder="شماره موبایل" class="hover-gray"/>
+                <button type="submit">خرید</button>
+
+                {% if final_buy %}
+                    <script type="text/javascript">
+                        alert("سفارش شما ثبت شد. در کمترین زمان ممکن برای شما ارسال خواهد شد.")
+                    </script>
+                {% endif %}
+
+                {% if empty_field %}
+                    <script type="text/javascript">
+                        alert("لطفا همه ی فیلد ها را وارد کنید!")
+                    </script>
+                {% endif %}
+    
+            </form>
+    </section>
+</body>
+</html>

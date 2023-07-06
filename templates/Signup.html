@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام</title>
+    <link rel="shortcut icon" href="../static/Assets/v1_90.png"/>
+    <link rel="stylesheet" href="../static/css/Style.css" />
+</head>
+<body>
+    
+    <div>
+        <img class="log-img absolute" src="../static/Assets/v81_155.png"/>
+
+        <form action="/signup" method="POST" class="login c-ffffff absolute">
+             
+            <h2>Niha Technology</h2>
+            <label>ثبت نام</label>
+            <input type="text" name="username"  placeholder="نام کاربری" class="log-element-hover"/>
+            <input type="password" name="password"  placeholder="رمز عبور"  class="log-element-hover"/>
+            <input type="password" name="repassword" placeholder="تایید رمز عبور" class="log-element-hover"/>
+            <input type="email" name="email" placeholder="ایمیل" class="log-element-hover"/>
+            <div class="login-btn-part">
+                <a href="/login" class="log-btn text-dec-none">ورود</a>
+            </div>
+            <button class="submit-login log-element-hover" type="submit">ثبت</button>
+
+            {% if user_err %}
+                <script> 
+                    alert("این نام کاربری وجود دارد.لطفا نام کاربری دیگری را انتخاب کنید.")    
+                </script>
+            {% endif %}
+
+            {% if empty_field %}
+                <script type="text/javascript">
+                    alert("لطفا همه ی فیلد ها را وارد کنید!")
+                </script>
+            {% endif %}
+           
+            {% if no_same_password %}
+                <script type="text/javascript">
+                    alert("رمز عبور و تکرار رمز عبور یکسان نیست!")
+                </script>
+            {% endif %}
+
+        </form>
+    </div>
+</body>
+</html>
